@@ -1,2 +1,2 @@
 # Flashcard
-desvendando a verdade 
+desvendando fake news  
