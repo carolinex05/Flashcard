@@ -1,77 +1,122 @@
-*{
-    margin: 0;
-    padding: 0;
+/* 1. CONFIGURAÇÕES GERAIS */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; /* Evita que padding quebre o tamanho dos elementos */
+} 
+
+body { 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; 
+    background-color: aquamarine; 
+    font-family: sans-serif; /* Torna a fonte mais moderna */
+} 
+
+/* 2. CABEÇALHO (HEADER) */
+.cabecalho { 
+    padding: 15px 25px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: rgb(49, 238, 49); 
+} 
+
+h1 { 
+    color: darkorchid; 
+    font-size: 24px; 
+} 
+
+.cabecalho-link { 
+    color: rgb(14, 126, 225); 
+    text-decoration: none; 
+    font-weight: bold;
+} 
+
+/* 3. CONTEÚDO PRINCIPAL (MAIN E SECTION) */
+main { 
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; /* Centraliza o conteúdo na tela */
+    justify-content: center; 
+    gap: 20px;
+    padding: 20px;
+} 
+
+h2 {
+    color: #333;
+    font-size: 20px;
 }
 
-.cabecalho {
-padding: 15px 25px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-background-color: rgb(49, 238, 49);
+section { 
+    display: flex; 
+    gap: 16px; 
+    flex-wrap: wrap; /* Permite que novos cartões pulem de linha se faltar espaço */
+} 
+
+/* 4. ESTRUTURA DOS CARTÕES (EFEITO FLIP 3D) */
+.cartao { 
+    width: 260px; 
+    height: 200px; 
+    perspective: 1000px; /* Dá profundidade 3D ao giro */
+} 
+
+.cartao-interno { 
+    position: relative; 
+    width: 100%; 
+    height: 100%; 
+    transition: transform 0.8s; 
+    transform-style: preserve-3d; 
+} 
+
+.cartao:hover .cartao-interno { 
+    transform: rotateY(180deg); /* Gira o card ao passar o mouse */
+} 
+
+.cartao-frente, .cartao-verso { 
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    border-radius: 12px; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra corrigida */
+    backface-visibility: hidden; /* Esconde o verso enquanto a frente está visível */
+    
+    /* Centraliza os textos e imagens dentro do cartão */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 15px; 
+    background-color: white; 
+    text-align: center; 
+} 
+
+.cartao-verso { 
+    transform: rotateY(180deg); /* Deixa o verso já invertido por padrão */
+} 
+
+/* 5. ELEMENTOS INTERNOS DOS CARTÕES */
+.cartao-imagem { 
+    width: 80px; 
+    height: 80px; 
+    object-fit: cover; /* Não distorce a imagem do Zoro */
+    border-radius: 50%; /* Deixa a foto redonda */
+    margin-bottom: 10px; 
+} 
+
+.cartao-texto { 
+    font-size: 14px; 
+    color: #333; 
+    font-weight: 500;
+} 
+
+/* 6. RODAPÉ (FOOTER) */
+footer { 
+    background-color: tomato; 
+    padding: 15px 25px; 
+    color: white; /* Mudei para branco para melhorar a leitura sobre o fundo tomate */
+    text-align: center;
+    font-weight: bold;
 }
 
-.cartao {
-    width: 260px;
-    height: 200px;
-}
-
-.cartao-frente, .cartao-verso {
-    width:100px ;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: aquamarine;
-}
-
-main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.cabecalho {
-    color: rgb(14, 126, 225);
-    text-decoration: none;
-}
-
-h1 {
-    color: darkorchid;
-    font-size: 24px;
-}
-
-footer{
-    background-color: tomato;
-    padding: 15px 25px;
-    color: rgb(217, 137, 17);
-}
-
-.cartao-interno{
-    position: relative;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-}
-
-.cartao:hover .cartao-interno{
-    transform: rotateY(180deg);
-}
-
-.cartao-frente, .cartao-verso {
-    position: absolute;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(red, green, blue, alpha);
-    backface-visibility: hidden;
-}
-
-
-.cartao-verso{
-    transform: rotateY(180deg);
-}
-
-section {
-    display: flex;
-    gap: 16px;
-}
