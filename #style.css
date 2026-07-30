@@ -1,8 +1,8 @@
-/* 1. CONFIGURAÇÕES GERAIS */
+
 * { 
     margin: 0; 
     padding: 0; 
-    box-sizing: border-box; /* Evita que padding quebre o tamanho dos elementos */
+    box-sizing: border-box; 
 } 
 
 body { 
@@ -10,10 +10,10 @@ body {
     flex-direction: column; 
     min-height: 100vh; 
     background-color: aquamarine; 
-    font-family: sans-serif; /* Torna a fonte mais moderna */
+    font-family: sans-serif; 
 } 
 
-/* 2. CABEÇALHO (HEADER) */
+
 .cabecalho { 
     padding: 15px 25px; 
     display: flex; 
@@ -33,12 +33,12 @@ h1 {
     font-weight: bold;
 } 
 
-/* 3. CONTEÚDO PRINCIPAL (MAIN E SECTION) */
+
 main { 
     flex: 1; 
     display: flex; 
     flex-direction: column; 
-    align-items: center; /* Centraliza o conteúdo na tela */
+    align-items: center; 
     justify-content: center; 
     gap: 20px;
     padding: 20px;
@@ -52,14 +52,14 @@ h2 {
 section { 
     display: flex; 
     gap: 16px; 
-    flex-wrap: wrap; /* Permite que novos cartões pulem de linha se faltar espaço */
+    flex-wrap: wrap; 
 } 
 
-/* 4. ESTRUTURA DOS CARTÕES (EFEITO FLIP 3D) */
+
 .cartao { 
     width: 260px; 
     height: 200px; 
-    perspective: 1000px; /* Dá profundidade 3D ao giro */
+    perspective: 1000px; 
 } 
 
 .cartao-interno { 
@@ -71,7 +71,7 @@ section {
 } 
 
 .cartao:hover .cartao-interno { 
-    transform: rotateY(180deg); /* Gira o card ao passar o mouse */
+    transform: rotateY(180deg); 
 } 
 
 .cartao-frente, .cartao-verso { 
@@ -79,10 +79,10 @@ section {
     width: 100%; 
     height: 100%; 
     border-radius: 12px; 
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra corrigida */
-    backface-visibility: hidden; /* Esconde o verso enquanto a frente está visível */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+    backface-visibility: hidden; 
     
-    /* Centraliza os textos e imagens dentro do cartão */
+  
     display: flex; 
     flex-direction: column; 
     align-items: center; 
@@ -93,15 +93,15 @@ section {
 } 
 
 .cartao-verso { 
-    transform: rotateY(180deg); /* Deixa o verso já invertido por padrão */
+    transform: rotateY(180deg); 
 } 
 
-/* 5. ELEMENTOS INTERNOS DOS CARTÕES */
+
 .cartao-imagem { 
     width: 80px; 
     height: 80px; 
-    object-fit: cover; /* Não distorce a imagem do Zoro */
-    border-radius: 50%; /* Deixa a foto redonda */
+    object-fit: cover; 
+    border-radius: 50%;  
     margin-bottom: 10px; 
 } 
 
@@ -111,11 +111,11 @@ section {
     font-weight: 500;
 } 
 
-/* 6. RODAPÉ (FOOTER) */
+
 footer { 
     background-color: tomato; 
     padding: 15px 25px; 
-    color: white; /* Mudei para branco para melhorar a leitura sobre o fundo tomate */
+    color: white; 
     text-align: center;
     font-weight: bold;
 }
